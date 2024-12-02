@@ -1,4 +1,4 @@
 package com.thedevhorse.cqrswithprojections.usecase;
 
-public interface OrderUseCase {
+public interface OrderDaoOutputPort {
 }
