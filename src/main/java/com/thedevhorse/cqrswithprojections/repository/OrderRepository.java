@@ -1,7 +1,8 @@
 package com.thedevhorse.cqrswithprojections.repository;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface OrderRepository {
+import org.springframework.data.repository.Repository;
+
+public interface OrderRepository extends Repository<OrderEntity, Long> {
+
 }
