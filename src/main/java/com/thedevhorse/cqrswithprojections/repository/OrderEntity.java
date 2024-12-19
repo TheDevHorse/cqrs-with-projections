@@ -10,8 +10,22 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long number;
+
+    public OrderEntity(Long number) {
+        this.number = number;
+    }
+
     public OrderEntity() {
 
+    }
+
+    public Long getNumber() {
+        return number;
+    }
+
+    public void setNumber(Long number) {
+        this.number = number;
     }
 
     public Long getId() {

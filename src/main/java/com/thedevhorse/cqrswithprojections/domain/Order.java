@@ -12,7 +12,7 @@ public class Order {
         return new Order(number);
     }
 
-    public Long getNumber() {
+    public Long number() {
         return number;
     }
 }

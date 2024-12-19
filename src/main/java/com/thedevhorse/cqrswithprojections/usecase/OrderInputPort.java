@@ -7,6 +7,4 @@ public interface OrderInputPort {
     void create(Order order);
 
     void update(Order order);
-
-    void delete(Long id);
 }

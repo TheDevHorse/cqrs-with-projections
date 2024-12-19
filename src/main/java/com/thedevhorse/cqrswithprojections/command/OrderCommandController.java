@@ -1,10 +1,11 @@
 package com.thedevhorse.cqrswithprojections.command;
 
+import com.thedevhorse.cqrswithprojections.domain.Order;
 import com.thedevhorse.cqrswithprojections.usecase.OrderInputPort;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/orders")
 public class OrderCommandController {
 
     private final OrderInputPort orderInputPort;
@@ -14,17 +15,22 @@ public class OrderCommandController {
     }
 
     @PostMapping
-    public void createOrder() {
-        orderInputPort.create(null);
+    public void createOrder(@RequestBody OrderRequest orderRequest) {
+        orderInputPort.create(
+                mapToOrder(orderRequest)
+        );
     }
 
     @PutMapping
-    public void updateOrder() {
-        orderInputPort.update(null);
+    public void updateOrder(@RequestBody OrderRequest orderRequest) {
+        orderInputPort.update(
+                mapToOrder(orderRequest)
+        );
     }
 
-    @DeleteMapping
-    public void deleteOrder() {
-        orderInputPort.delete(null);
+    private Order mapToOrder(OrderRequest orderRequest) {
+        return Order.create(
+                orderRequest.number()
+        );
     }
 }
