@@ -1,4 +1,6 @@
 package com.thedevhorse.cqrswithprojections.command;
 
-public record OrderRequest(Long number) {
+import com.thedevhorse.cqrswithprojections.domain.Status;
+
+public record OrderRequest(Long number, Status status) {
 }

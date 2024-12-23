@@ -30,7 +30,8 @@ public class OrderCommandController {
 
     private Order mapToOrder(OrderRequest orderRequest) {
         return Order.create(
-                orderRequest.number()
+                orderRequest.number(),
+                orderRequest.status()
         );
     }
 }

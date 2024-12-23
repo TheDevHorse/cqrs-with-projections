@@ -1,5 +1,6 @@
 package com.thedevhorse.cqrswithprojections.repository;
 
+import com.thedevhorse.cqrswithprojections.domain.Status;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,8 +13,11 @@ public class OrderEntity {
 
     private Long number;
 
-    public OrderEntity(Long number) {
+    private Status status;
+
+    public OrderEntity(Long number, Status status) {
         this.number = number;
+        this.status = status;
     }
 
     public OrderEntity() {
@@ -34,5 +38,13 @@ public class OrderEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

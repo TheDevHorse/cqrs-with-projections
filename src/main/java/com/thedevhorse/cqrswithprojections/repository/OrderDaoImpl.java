@@ -27,7 +27,8 @@ public class OrderDaoImpl implements OrderDaoOutputPort {
 
     private OrderEntity mapOrderToEntity(Order order) {
         return new OrderEntity(
-                order.number()
+                order.number(),
+                order.status()
         );
     }
 }
