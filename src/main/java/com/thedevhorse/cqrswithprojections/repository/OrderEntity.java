@@ -4,7 +4,7 @@ import com.thedevhorse.cqrswithprojections.domain.Status;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "Orders")
 public class OrderEntity {
 
     @Id
@@ -13,6 +13,7 @@ public class OrderEntity {
 
     private Long number;
 
+    @Enumerated(EnumType.ORDINAL)
     private Status status;
 
     public OrderEntity(Long number, Status status) {
