@@ -21,13 +21,6 @@ public class OrderCommandController {
         );
     }
 
-    @PutMapping
-    public void updateOrder(@RequestBody OrderRequest orderRequest) {
-        orderInputPort.update(
-                mapToOrder(orderRequest)
-        );
-    }
-
     private Order mapToOrder(OrderRequest orderRequest) {
         return Order.create(
                 orderRequest.number(),

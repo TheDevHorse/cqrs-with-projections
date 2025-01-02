@@ -16,9 +16,4 @@ public class OrderUseCaseImpl implements OrderInputPort {
     public void create(Order order) {
         orderDaoOutputPort.createOrder(order);
     }
-
-    @Override
-    public void update(Order order) {
-        orderDaoOutputPort.updateOrder(order);
-    }
 }

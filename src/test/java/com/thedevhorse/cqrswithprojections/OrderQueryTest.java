@@ -29,19 +29,18 @@ class OrderQueryTest {
 
     @BeforeEach
     public void setUp() {
-        OrderEntity orderEntity = new OrderEntity(123L, Status.IN_PROGRESS);
+        OrderEntity orderEntity = new OrderEntity(1234L, Status.IN_PROGRESS);
         orderRepository.save(orderEntity);
     }
 
     @Test
     void givenOrderNumber_whenGetOrdersByNumberIsCalled_thenOrderResponseIsReturned() throws Exception {
         // Given
-        Long number = 123L;
+        Long number = 1234L;
 
         // When
         ResultActions result = mvc.perform(get("/api/orders/{number}", number)
                 .contentType(MediaType.APPLICATION_JSON));
-
 
         // Then
         result.andExpect(status().isOk())

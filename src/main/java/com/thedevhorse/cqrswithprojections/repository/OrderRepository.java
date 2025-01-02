@@ -11,5 +11,4 @@ public interface OrderRepository extends Repository<OrderEntity, Long> {
     void save(OrderEntity orderEntity);
 
     Optional<OrderResponse> findByNumber(Long number);
-
 }

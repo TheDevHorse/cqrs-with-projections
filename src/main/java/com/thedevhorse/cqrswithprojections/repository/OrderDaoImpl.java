@@ -20,11 +20,6 @@ public class OrderDaoImpl implements OrderDaoOutputPort {
         );
     }
 
-    @Override
-    public void updateOrder(Order order) {
-        // Update order in database
-    }
-
     private OrderEntity mapOrderToEntity(Order order) {
         return new OrderEntity(
                 order.number(),
